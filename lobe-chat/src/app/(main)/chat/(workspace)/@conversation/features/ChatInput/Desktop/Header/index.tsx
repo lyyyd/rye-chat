@@ -11,7 +11,7 @@ interface HeaderProps {
 
 const Header = memo<HeaderProps>(({ expand, setExpand }) => (
   <ActionBar
-    rightAreaEndRender={
+    rightAreaEndRender={ // 放大输入栏 按钮
       <ActionIcon
         icon={expand ? Minimize2 : Maximize2}
         onClick={() => {

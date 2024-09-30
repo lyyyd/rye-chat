@@ -90,13 +90,14 @@ const AgentsSuggest = memo<{ mobile?: boolean }>(({ mobile }) => {
 
   return (
     <Flexbox gap={8} width={'100%'}>
+      {/* 新增助手推荐： */}
       <Flexbox align={'center'} horizontal justify={'space-between'}>
         <div className={styles.title}>{t('guide.agents.title')}</div>
         <ActionIcon
           icon={RefreshCw}
           onClick={handleRefresh}
           size={{ blockSize: 24, fontSize: 14 }}
-          title={t('guide.agents.replaceBtn')}
+          title={t('guide.agents.replaceBtn')} // 换一批
         />
       </Flexbox>
       <Grid gap={8} rows={2}>

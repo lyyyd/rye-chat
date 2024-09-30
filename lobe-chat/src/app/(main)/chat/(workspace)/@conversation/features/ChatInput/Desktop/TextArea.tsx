@@ -116,7 +116,7 @@ const InputArea = memo<InputAreaProps>(({ setExpand }) => {
             send();
           }
         }}
-        placeholder={t('sendPlaceholder')}
+        placeholder={t('sendPlaceholder')} // 输入聊天内容...
         ref={ref}
         type={'pure'}
         value={value}

@@ -113,10 +113,10 @@ const Footer = memo<FooterProps>(({ setExpand, expand }) => {
           style={{ color: theme.colorTextDescription, fontSize: 12, marginRight: 12 }}
         >
           {sendShortcut}
-          <span>{t('input.send')}</span>
+          <span>{t('input.send')}</span> {/* 发送 */}
           <span>/</span>
           {wrapperShortcut}
-          <span>{t('input.warp')}</span>
+          <span>{t('input.warp')}</span> {/* 换行 */}
         </Flexbox>
         <SaveTopic />
         <Flexbox style={{ minWidth: 92 }}>
@@ -126,7 +126,7 @@ const Footer = memo<FooterProps>(({ setExpand, expand }) => {
               icon={<StopLoadingIcon />}
               onClick={stopGenerateMessage}
             >
-              {t('input.stop')}
+              {t('input.stop')} {/* 停止 */}
             </Button>
           ) : (
             <Space.Compact>
@@ -139,7 +139,7 @@ const Footer = memo<FooterProps>(({ setExpand, expand }) => {
                 }}
                 type={'primary'}
               >
-                {t('input.send')}
+                {t('input.send')} {/* 发送 */}
               </Button>
               <SendMore disabled={!canSend} isMac={isMac} />
             </Space.Compact>

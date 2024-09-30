@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import HotKeys from '@/components/HotKeys';
-import { ALT_KEY } from '@/const/hotkeys';
+import { ALT_KEY, ENTER_KEY } from '@/const/hotkeys';
 import { useSendMessage } from '@/features/ChatInput/useSend';
 import { useChatStore } from '@/store/chat';
 import { useUserStore } from '@/store/user';
@@ -42,7 +42,7 @@ const SendMore = memo<SendMoreProps>(({ disabled, isMac }) => {
 
   const { send: sendMessage } = useSendMessage();
 
-  const hotKey = [ALT_KEY, 'enter'].join('+');
+  const hotKey = [ALT_KEY, ENTER_KEY].join('+');
   useHotkeys(
     hotKey,
     (keyboardEvent, hotkeysEvent) => {
@@ -63,7 +63,7 @@ const SendMore = memo<SendMoreProps>(({ disabled, isMac }) => {
           {
             icon: !useCmdEnterToSend ? <Icon icon={LucideCheck} /> : <div />,
             key: 'sendWithEnter',
-            label: t('input.sendWithEnter'),
+            label: t('input.sendWithEnter'), // 按 Enter 键发送
             onClick: () => {
               updatePreference({ useCmdEnterToSend: false });
             },
@@ -73,7 +73,7 @@ const SendMore = memo<SendMoreProps>(({ disabled, isMac }) => {
             key: 'sendWithCmdEnter',
             label: t('input.sendWithCmdEnter', {
               meta: typeof isMac === 'boolean' ? (isMac ? '⌘' : 'Ctrl') : '…',
-            }),
+            }), // 按 {{meta}} + Enter 键发送
             onClick: () => {
               updatePreference({ useCmdEnterToSend: true });
             },
@@ -82,7 +82,7 @@ const SendMore = memo<SendMoreProps>(({ disabled, isMac }) => {
           {
             icon: <Icon icon={BotMessageSquare} />,
             key: 'addAi',
-            label: t('input.addAi'),
+            label: t('input.addAi'), // 添加一条 AI 消息
             onClick: () => {
               addAIMessage();
             },
@@ -90,9 +90,9 @@ const SendMore = memo<SendMoreProps>(({ disabled, isMac }) => {
           {
             icon: <Icon icon={MessageSquarePlus} />,
             key: 'addUser',
-            label: (
+            label: ( // 添加一条用户消息
               <Flexbox gap={24} horizontal>
-                {t('input.addUser')}
+                {t('input.addUser')} 
                 <HotKeys keys={hotKey} />
               </Flexbox>
             ),
@@ -106,7 +106,7 @@ const SendMore = memo<SendMoreProps>(({ disabled, isMac }) => {
       trigger={['hover']}
     >
       <Button
-        aria-label={t('input.more')}
+        aria-label={t('input.more')} // 更多
         className={styles.arrow}
         icon={<Icon icon={LucideChevronDown} />}
         type={'primary'}
