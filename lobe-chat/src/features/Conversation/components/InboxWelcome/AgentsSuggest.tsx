@@ -100,6 +100,7 @@ const AgentsSuggest = memo<{ mobile?: boolean }>(({ mobile }) => {
           title={t('guide.agents.replaceBtn')} // 换一批
         />
       </Flexbox>
+      {/* 卡片信息 */}
       <Grid gap={8} rows={2}>
         {isLoading || !assistantList
           ? loadingCards

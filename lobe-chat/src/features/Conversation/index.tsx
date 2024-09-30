@@ -8,7 +8,7 @@ const ChatList = lazy(() => import('./components/VirtualizedList'));
 interface ConversationProps {
   mobile?: boolean;
 }
-
+// 对话组件
 const Conversation = ({ mobile }: ConversationProps) => {
   return (
     <Flexbox

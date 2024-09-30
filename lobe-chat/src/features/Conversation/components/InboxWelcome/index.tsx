@@ -53,6 +53,7 @@ const InboxWelcome = memo(() => {
           <FluentEmoji emoji={'👋'} size={40} type={'anim'} />
           <h1 className={styles.title}>{greeting}</h1>
         </Flexbox>
+        {/* 欢迎页 问候区 */}
         <Markdown className={styles.desc} variant={'chat'}>
           {t(showCreateSession ? 'guide.defaultMessage' : 'guide.defaultMessageWithoutCreate', {
             appName: BRANDING_NAME,

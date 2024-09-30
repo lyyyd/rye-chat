@@ -71,12 +71,13 @@ const QuestionSuggest = memo<{ mobile?: boolean }>(({ mobile }) => {
   return (
     <Flexbox gap={8} width={'100%'}>
       <Flexbox align={'center'} horizontal justify={'space-between'}>
+        {/* 大家都在问 */}
         <div className={styles.title}>{t('guide.questions.title')}</div>
         <Link href={USAGE_DOCUMENTS} target={'_blank'}>
           <ActionIcon
             icon={ArrowRight}
             size={{ blockSize: 24, fontSize: 16 }}
-            title={t('guide.questions.moreBtn')}
+            title={t('guide.questions.moreBtn')} // 了解更多
           />
         </Link>
       </Flexbox>
